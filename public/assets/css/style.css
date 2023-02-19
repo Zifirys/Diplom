@@ -1,0 +1,445 @@
+html, body, main{
+	height: 100%;
+	background-color: #020f1a;
+	color: #fff;
+	font-family: Rubik,Arial,sans-serif;
+}
+
+a{
+	color: #fff;
+	text-decoration: none;
+}
+
+a:hover{
+	color: #a5a5a5;
+	text-decoration: none;
+}
+
+label{
+	font-size: 15px;
+}
+
+input[type=search]{
+	margin-top: 25px;
+	margin-bottom: 40px;
+	border-radius: 7px;
+	width: 25%;
+}
+
+input[type=number]{
+	width: 45px;
+	color: black;
+}
+
+.container{
+	width: 880px;
+}
+
+.required:after{
+	content: '*';
+	color: red;
+	margin-left: 3px;
+}
+
+.card{
+	background-color: #b8d7e9;
+	border: solid 2px #DCDCDC;
+	border-radius: 14px;
+	padding: 30px;
+	color: #005c89
+}
+
+.btn-info{
+	background-color: #0845f3;
+	margin-top: 20px;
+}
+.btn-info:hover{
+	background-color: #0b1e38;
+	border: solid 1px #0081fd;
+}
+
+
+.btn-default{
+	background-color: #0c87f1;
+	margin-top: 15px;
+	color: #fff;
+}
+.btn-default:hover{
+	background-color: #334062;
+	color: #fff;
+}
+
+.btn-primary{
+	color: #fff;
+	background-color: #143453;
+	border: solid 1px #0081fd;
+}
+.btn-primary:hover{
+	color: #DCDCDC;
+	background-color: #0b1e38;
+	border: solid 1px #0081fd;
+}
+
+
+
+
+
+
+
+
+
+
+/*login*/
+
+.main1{
+	background-color: #00507a;
+	height: 100%;
+}
+
+.loginForm{
+	margin-left: 25%;
+	width: 50%;
+	margin-top: 10em;
+}
+
+.loginForm h1{
+	margin-bottom: 25px;
+	color: #005c89;
+}
+
+.loginForm label{
+	color: #005c89;
+}
+
+.form-group{
+	margin-bottom: 10px;
+}
+
+.form-control{
+	margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+/*header*/
+
+.navbar-default{
+	background-color: #13324b;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border: none;
+}
+
+.nav-pills>li>a{
+	color: #fff;
+	background-color: #0891f3;
+	border: solid 1px #fff;
+	font-size: 16px;
+}
+
+.nav-pills>li>a:hover{
+	color: #DCDCDC;
+	background-color: #143453;
+	border: solid 1px #0081fd;
+}
+
+.nav-pills>li:last-child{
+	float: right;
+}
+
+
+
+
+
+
+
+
+
+/*index*/
+
+.main h2{
+	margin-bottom: 40px;
+}
+
+.mainSection{
+	margin-top: 20px;
+	padding: 5px;
+	margin-bottom: 10px;
+	border: solid 2px #0081fd;
+	border-radius: 10px;
+	background-color: #0b1e38;
+}
+
+.mainSection:hover{
+	background-color: #6c8da7;
+	border-color: #fff;
+}
+
+.mainSection h3{
+	font-size: 20px;
+	margin: 15px;
+}
+
+.mainSection a:hover{
+	color: #fff;
+}
+
+
+
+
+
+
+
+
+
+/*add*/
+
+.add{
+	margin-top: 3em;
+	margin-bottom: 3em;
+}
+
+.add h2{
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+
+.add label{
+	margin-top: 5px;
+}
+
+
+
+
+
+
+
+
+/*register*/
+
+.registerForm h2{
+	margin-top: 20px;
+	margin-bottom: 40px;
+
+}
+
+.registerForm label{
+	margin-top: 5px;
+
+}
+
+
+
+
+
+
+
+/*products*/
+
+.product{
+	margin-bottom: 100px;
+}
+
+.formProduct{
+	margin: 115px;
+}
+
+.product img{
+	width: 175px;
+	height: 120px;
+}
+
+.productImg{
+	text-align: center;
+}
+
+.mainIMG{
+	margin-top: 20px;
+	margin-bottom: 140px;
+}
+
+
+
+
+
+
+/*orders*/
+
+.table>thead>tr>th{
+	background-color: #0081b9;
+}
+.table>thead>tr>th:first-child{
+	border-top-left-radius: 2px;
+}
+.table>thead>tr>th:last-child{
+	border-top-right-radius: 2px;
+}
+
+
+.table>tbody>tr{
+	background-color: #60a0c5;
+}
+
+
+.table>tfoot>tr>th{
+	background-color: #004372;
+}
+.table>tfoot>tr>th:first-child{
+	border-bottom-left-radius: 7px;
+}
+.table>tfoot>tr>th:last-child{
+	border-bottom-right-radius: 7px;
+}
+
+.orderImg{
+	width: 120px;
+	height: 77px;
+}
+
+.divOrderBtn{
+	margin-bottom: 240px;
+}
+
+.orderBtn{
+	padding: 10px;
+	font-size: 14px;
+}
+
+
+
+
+
+
+
+
+
+
+/*footer*/
+
+footer {
+  background-color: #0b1015;
+}
+
+.footer p{
+	margin-top: 40px;
+}
+
+.footer-list-group{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.list-group-item{
+	border: none;
+	background-color: #ffffff14;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*адаптивная верстка*/
+
+@media (max-width: 767px) {
+
+
+	.navbar-default .navbar-pills>li>a{
+		text-align:center;
+		color: #fff;
+		background-color: #006bff3d;
+		border: solid 1px #c9e7ff;
+	}
+
+	.navbar-default .navbar-pills>li>a:hover{
+		background-color: #e0f3ff;
+		color: #00439f;
+	}
+
+	.nav-pills>li>a{
+		padding: none;
+		font-size: 14px;
+		width: 100%;
+		margin-top: 15px;
+	}
+
+	.container{
+		width: auto;
+	}
+
+	.card{
+		background-color: #00507a;
+		border: none;
+		border-radius: 0;
+		margin-top: 11em;
+		padding: 0;
+	}
+
+	.loginForm h1{
+		color: #fff;
+	}
+
+	.loginForm label{
+		color: #fff;
+	}
+
+	.product{
+		margin-bottom: 130px;
+	}
+
+	.ProductText{
+		text-align: center;
+	}
+
+	.productImg{
+		text-align: center;
+	}
+
+	input[type=search]{
+		width: 100%;
+	}
+
+
+	footer{
+    	display: none;
+	}
+}
+
+
+
+
+
+
+
+@media (max-width: 380px){
+
+	.nav-pills>li>a{
+		font-size: 12px;
+	}
+
+	.nav-pills>li:last-child{
+		float: left;
+	}
+
+	.product img{
+		width: 115px;
+		height: 70px;
+	}
+
+	input[type=search]{
+		width: 100%;
+	}
+}
