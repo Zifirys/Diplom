@@ -22,7 +22,7 @@
 
                     <div class="form-group">
                       <label class="required" for="login">Имя пользователя</label>
-                      <input name="login" type="text" class="form-control" placeholder="Логин" autofocus/>
+                      <input name="login" value="{{ old('login') }}" type="text" class="form-control" placeholder="Логин" autofocus />
 
                       <label class="required" for="password">Пароль</label>
                       <input name="password" type="password" class="form-control" placeholder="Пароль" />

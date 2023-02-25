@@ -1,7 +1,8 @@
-<?php
+ <?php
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreRegisterRequest;
 use Illuminate\Http\Request;
 
 class RegisterController extends Controller
@@ -10,7 +11,17 @@ class RegisterController extends Controller
         return view('main.register.index');
     }
 
-    public function store(Request $request){
+    public function store(StoreRegisterRequest $request){
+
+        /*$validated->validated();*/
+
         
+
+        session(['alert' => 'Вы успешно добавили пользователя']);
+
+        return redirect()->route('home');
+        
+        /*если ошибка*/
+        /*return redirect()->back()->withInput();*/
     }
 }

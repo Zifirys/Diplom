@@ -81,8 +81,13 @@ input[type=number]{
 }
 
 
+/*alert*/
 
-
+.alert{
+	border: none;
+	font-size: 12px;
+	padding: 7px;
+}
 
 
 
@@ -425,6 +430,11 @@ footer {
 
 
 @media (max-width: 380px){
+
+	.nav-pills>li{
+		width: 100%;
+		text-align: center;
+	}
 
 	.nav-pills>li>a{
 		font-size: 12px;

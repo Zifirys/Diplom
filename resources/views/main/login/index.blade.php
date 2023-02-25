@@ -24,7 +24,7 @@
 
 
             <section class="login col-lg-12 col-md-12 col-sm-12">
-              <form class="loginForm" method="POST" action="#">
+              <form class="loginForm" method="POST" action=" {{ route('login.store') }} ">
                 <div class="card">
                   @csrf
 
@@ -32,14 +32,12 @@
 
                   <div class="form-group">
                     <label class="required" for="login">Имя пользователя</label>
-                    <input name="login" type="text" class="form-control" placeholder="Логин" autofocus/>
+                    <input name="login" type="text" value="{{ old('login') }}" class="form-control" placeholder="Логин" autofocus/>
 
                     <label class="required" for="password">Пароль</label>
                     <input name="password" type="password" class="form-control" placeholder="Пароль" />
 
                     <button type="submit" class="btn btn-info btn-block mb-4">Войти</button>
-                  
-                    <a href=" {{ route('home') }} " class="btn btn-info btn-block mb-4">home</a>
                   </div>
 
                 </div>

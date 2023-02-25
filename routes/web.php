@@ -4,12 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AddController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
 
 
 Route::get('/', [LoginController::class, 'index'])->name('login');
+Route::post('login', [LoginController::class, 'store'])->name('login.store');
 
 
 Route::get('register', [RegisterController::class, 'index'])->name('register');
@@ -22,10 +22,9 @@ Route::get('homeAdmin', [HomeController::class, 'dop'])->name('home.admin');
 
 
 
-Route::get('add', [AddController::class, 'index'])->name('add');
-
-
 Route::get('products', [ProductController::class, 'index'])->name('product');
+Route::get('create', [ProductController::class, 'createNew'])->name('add');
+Route::post('create', [ProductController::class, 'storeNew'])->name('add.store');
 
 
 Route::get('orders', [OrderController::class, 'index'])->name('order');
