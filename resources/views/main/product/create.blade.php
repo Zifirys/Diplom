@@ -22,13 +22,15 @@
                   
                     @csrf
 
+                    <x-errors />
+
                     <div class="form-group">
 
                       <label class="required" for="category" class="mr-2 col-form-label-sm">Категория</label>
                        <input name="category" type="text" value="{{ old('category') }}" class="form-control" placeholder="Ноутбук" autofocus/>
 
-                      <label class="required" for="fullName" class="mr-2 col-form-label-sm">Полное наименование товара</label>
-                      <input name="fullName" type="text" value="{{ old('fullName') }}" class="form-control" placeholder="Apple MacBook Air"/>
+                      <label class="required" for="fullName" class="mr-2 col-form-label-sm">Краткое наименование товара</label>
+                      <input name="shortName" type="text" value="{{ old('shortName') }}" class="form-control" placeholder="Apple MacBook Air"/>
 
                       <label class="required" for="img">Выбирите картинку</label>
                       <input name='img' type="file" class="form-control-file" id="img">

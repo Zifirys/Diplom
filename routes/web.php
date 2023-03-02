@@ -23,8 +23,9 @@ Route::get('homeAdmin', [HomeController::class, 'dop'])->name('home.admin');
 
 
 Route::get('products', [ProductController::class, 'index'])->name('product');
-Route::get('create', [ProductController::class, 'createNew'])->name('add');
-Route::post('create', [ProductController::class, 'storeNew'])->name('add.store');
+Route::get('product/create', [ProductController::class, 'createNew'])->name('add');
+Route::post('product/create/store', [ProductController::class, 'storeNew'])->name('add.store');
+Route::get('product/{id}', [ProductController::class, 'delete'])->name('product.delete');
 
 
 Route::get('orders', [OrderController::class, 'index'])->name('order');

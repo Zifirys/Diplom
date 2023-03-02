@@ -18,10 +18,10 @@ return new class extends Migration
             $table->timestamps();
 
             $table->string('category');
-            $table->string('fullName');
+            $table->string('shortName');
             $table->binary('img');
             $table->string('color');
-            $table->decimal('price')->unsigned();
+            $table->integer('price')->unsigned();
         });
     }
 

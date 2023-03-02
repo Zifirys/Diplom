@@ -24,8 +24,8 @@ class StoreLoginReguest extends FormRequest
     public function rules()
     {
         return [
-            'login' => ['required', 'string', 'max:60'],
-            'password' => ['required', 'string', 'min:5'],
+            'login' => ['required', 'string', 'max:50'],
+            'password' => ['required', 'string', 'min:5', 'max:50'],
         ];
     }
 }

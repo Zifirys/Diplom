@@ -24,11 +24,15 @@
 
 
             <section class="login col-lg-12 col-md-12 col-sm-12">
+
               <form class="loginForm" method="POST" action=" {{ route('login.store') }} ">
                 <div class="card">
+
                   @csrf
 
                   <h1 class="text-center">Вход</h1>
+
+                  <x-errors />
 
                   <div class="form-group">
                     <label class="required" for="login">Имя пользователя</label>

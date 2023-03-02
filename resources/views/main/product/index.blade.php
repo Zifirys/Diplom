@@ -9,52 +9,57 @@
 
           <div class="products">
 
-            <input type="search" class="form-control" id="datatable-search-input" placeholder="Поиск">
+            <form class="searchForm" method="GET" action="{{ route('product') }}">
+              <div class="form-group">
 
-            <section class="product col-lg-3 col-md-3 col-sm-6 col-xs-12">
-              <div class="productImg"><img src="assets/img/mac.jpg" alt="картинка"></div>
-              <div class="ProductText"><h3>Название</h3>
-                <p>Остальное. Lorem ipsum dolor sit amet, consectetur adipisicing. Aliquam molestiae cum ea vero? Ex odio aliquam sed, maxime voluptas nemo!</p>
-                <p>25 rubley</p>
-                <p>Удалить только для админа</p>
+                <input name="search" value="{{ old('search') }}" type="search" class="form-control" id="search" placeholder="Поиск">
+                <button type="submit" for="search" class="btn btn-default">Искать</button>
+
+                <form action="{{ route('product') }}">
+                  <button type="submit" class="btn btn-default pull-right">Сброс</button>
+                </form>
+
               </div>
-              <span><button type="submit" class="btn btn-info">Удалить</button></span>
-              <button type="submit" class="btn btn-info pull-right">В заказ</button>
-            </section>
+            </form>
 
-            <section class="product col-lg-3 col-md-3 col-sm-6 col-xs-12">
-              <div class="productImg"><img src="assets/img/mac.jpg" alt="картинка"></div>
-              <div class="ProductText">
-                <h3>Название</h3>
-                <p>Остальное. !</p>
-                <p>25 rubley</p>
+            @if($products->isEmpty())
+
+            <div class="h2 text-center">
+
+              {{ "Нет товаров" }}
+
+            </div>
+
+            @else
+
+              @foreach($products as $product )
+
+                <section class="product col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                  <div class="productImg"><img src="{{ $product->img }}" alt="картинка"></div>
+                  <div class="ProductText">
+                    <h4>{{ $product->shortName }}</h4>
+                    <p>{{ $product->color }}</p>
+                    <h3>{{ $product->price }} руб.</h3>
+                    <p>Удалить только для админа</p>
+                  </div>
+
+                  <span>
+                    <a class="btn btn-info pull-right" href="{{ route('product.delete', $product->id) }}">Удалить</a>
+                  </span>
+
+
+                  <button type="submit" class="btn btn-info">В заказ</button>
+                </section>
+
+              @endforeach
+
+              <div class="pagination col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right">
+
+                {{ $products->links() }}
+
               </div>
-              <button type="submit" class="btn btn-info">Удалить</button>
-              <button type="submit" class="btn btn-info pull-right">В заказ</button>
-            </section>
 
-            <section class="product col-lg-3 col-md-3 col-sm-6 col-xs-12">
-              <div class="productImg"><img src="assets/img/mac.jpg" alt="картинка"></div>
-              <div class="ProductText">
-                <h3>Название</h3>
-                <p>Остальное.  odio aliquam sed, maxime voluptas nemo!</p>
-                <p>25 rubley</p>
-             </div>
-              <button type="submit" class="btn btn-info">Удалить</button>
-              <button type="submit" class="btn btn-info pull-right">В заказ</button>
-            </section>
-
-            <section class="product col-lg-3 col-md-3 col-sm-6 col-xs-12">
-              <div class="productImg"><img src="assets/img/mac.jpg" alt="картинка"></div>
-              <div class="ProductText">
-                <h3>Название</h3>
-                <p>Ос aliquam sed, maxime voluptas nemo!</p>
-                <p>25 rubley</p>
-              </div>
-              <button type="submit" class="btn btn-info">Удалить</button>
-              <button type="submit" class="btn btn-info pull-right">В заказ</button>
-            </section>
-
+            @endif
 
 
           </div>

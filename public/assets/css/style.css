@@ -1,6 +1,6 @@
 html, body, main{
 	height: 100%;
-	background-color: #020f1a;
+	background-color: #11002e;
 	color: #fff;
 	font-family: Rubik,Arial,sans-serif;
 }
@@ -19,13 +19,6 @@ label{
 	font-size: 15px;
 }
 
-input[type=search]{
-	margin-top: 25px;
-	margin-bottom: 40px;
-	border-radius: 7px;
-	width: 25%;
-}
-
 input[type=number]{
 	width: 45px;
 	color: black;
@@ -42,43 +35,56 @@ input[type=number]{
 }
 
 .card{
-	background-color: #b8d7e9;
-	border: solid 2px #DCDCDC;
+	background-color: #dfb8e9;
+	border: solid 2px #fff8fe;
 	border-radius: 14px;
 	padding: 30px;
-	color: #005c89
+	color: #fff;
 }
 
+
+
+
+
+
+/*btn*/
+
 .btn-info{
-	background-color: #0845f3;
+	background-color: #000;
+	border: solid 1px #cbb6ed;
 	margin-top: 20px;
 }
 .btn-info:hover{
-	background-color: #0b1e38;
-	border: solid 1px #0081fd;
+	background-color: #222;
+	border: solid 1px #787878;
 }
 
 
 .btn-default{
-	background-color: #0c87f1;
+	background-color: #c7b5ff;
 	margin-top: 15px;
-	color: #fff;
+	color: #25024a;
 }
 .btn-default:hover{
-	background-color: #334062;
-	color: #fff;
+	background-color: #000000a3;
+	color: #c7b5ff;
 }
 
 .btn-primary{
-	color: #fff;
-	background-color: #143453;
-	border: solid 1px #0081fd;
+	background-color: #b86aff;
+	border: solid 1px #fff;
 }
 .btn-primary:hover{
-	color: #DCDCDC;
-	background-color: #0b1e38;
-	border: solid 1px #0081fd;
+	background-color: #7c20cf;
+	border: solid 1px #fff;
 }
+
+
+
+
+
+
+
 
 
 /*alert*/
@@ -89,6 +95,50 @@ input[type=number]{
 	padding: 7px;
 }
 
+.alert-danger{
+   color: #ffd7d6;
+   background-color: #9d0000;
+}
+
+
+
+
+
+
+
+
+/*pagination*/
+
+.pagination{
+	margin-bottom: 40px;
+	float: right;
+}
+
+
+
+
+
+
+
+
+/*search*/
+
+.searchForm{
+	margin-top: 20px;
+	margin-bottom: 80px;
+}
+
+.searchForm input[type=search]{
+		margin-top: 25px;
+		border-radius: 7px;
+}
+
+.searchForm button{
+	margin: 5px;
+	font-size: 16px;
+}
+
+
 
 
 
@@ -97,7 +147,7 @@ input[type=number]{
 /*login*/
 
 .main1{
-	background-color: #00507a;
+	background-color: #29007a;
 	height: 100%;
 }
 
@@ -109,11 +159,6 @@ input[type=number]{
 
 .loginForm h1{
 	margin-bottom: 25px;
-	color: #005c89;
-}
-
-.loginForm label{
-	color: #005c89;
 }
 
 .form-group{
@@ -134,7 +179,7 @@ input[type=number]{
 /*header*/
 
 .navbar-default{
-	background-color: #13324b;
+	background-color: #000000a3;
 	padding-top: 20px;
 	padding-bottom: 20px;
 	border: none;
@@ -142,15 +187,15 @@ input[type=number]{
 
 .nav-pills>li>a{
 	color: #fff;
-	background-color: #0891f3;
+	background-color: #464072;
 	border: solid 1px #fff;
 	font-size: 16px;
 }
 
 .nav-pills>li>a:hover{
 	color: #DCDCDC;
-	background-color: #143453;
-	border: solid 1px #0081fd;
+	background-color: #210838;
+	border: solid 1px #4e1840;
 }
 
 .nav-pills>li:last-child{
@@ -175,13 +220,13 @@ input[type=number]{
 	margin-top: 20px;
 	padding: 5px;
 	margin-bottom: 10px;
-	border: solid 2px #0081fd;
+	border: solid 2px #fff;
 	border-radius: 10px;
-	background-color: #0b1e38;
+	background-color: #73229d;
 }
 
 .mainSection:hover{
-	background-color: #6c8da7;
+	background-color: #3b0d52;
 	border-color: #fff;
 }
 
@@ -248,6 +293,22 @@ input[type=number]{
 
 .product{
 	margin-bottom: 100px;
+	padding: 25px;
+}
+
+.product:nth-child(even){
+	background-color: #48227e;
+	border-radius: 10px;
+}
+
+.product:nth-child(odd){
+	background-color: #9757d7;
+	border-radius: 10px;
+}
+
+.product:hover{
+	background-color: #000000a3;
+	border-radius: 10px;
 }
 
 .formProduct{
@@ -326,9 +387,6 @@ input[type=number]{
 
 /*footer*/
 
-footer {
-  background-color: #0b1015;
-}
 
 .footer p{
 	margin-top: 40px;
