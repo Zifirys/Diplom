@@ -16,11 +16,20 @@ class User extends Authenticatable
 
         'login', 'password',
 
+        'admin'
+
+    ];
+
+    protected $casts = [
+        
+        'admin' => 'boolean',
+
     ];
 
     protected $hidden = [
 
         'password', 'remember_token',
+
     ];
 
 

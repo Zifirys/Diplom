@@ -23,8 +23,8 @@
               <ul class="nav nav-pills">
                 <li><a href=" {{ route('home') }} ">Главная</a></li>
                 <li><a href=" {{ route('order') }} ">Сформировать заказ</a></li>
-      
-                <li><a href=" {{ route('login') }} " class="pull-right">Выход</a></li>
+                <li><a href=" {{ route('logout') }} " class="pull-right">Выход</a></li>
+
               </ul>
 
             </div>

@@ -25,8 +25,10 @@ class StoreRegisterRequest extends FormRequest
     {
         return [
             'login' => ['required', 'string', 'max:50', 'unique:users,login'],
-            'password' => ['required', 'string', 'min:5', 'max:50', 'confirmed'],
-            'password_confirmation' => ['required', 'string', 'min:5', 'max:50'],
+            'password' => ['required', 'string', 'min:5', 'max:60', 'confirmed'],
+            'password_confirmation' => ['required', 'string'],
+            'admin' => ['nullable', 'boolean'],
+            'remember_token' => ['nullable', 'string'],
         ];
     }
 }

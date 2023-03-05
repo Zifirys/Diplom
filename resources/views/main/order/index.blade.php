@@ -30,28 +30,28 @@
                   <td>macbook</td>
                   <td><input type="number" value="1" name="tentacles"></td>
                   <td>256 rub</td>
-                  <td><button type="submit" class="btn btn-primary pull-right">Убрать</button></td>
+                  <td><button type="submit" class="btn btn-info pull-right">Убрать</button></td>
                 </tr>
                 <tr>
                   <td><img class="orderImg" src="assets/img/mac.jpg" alt="картинка"></td>
                   <td>macbook</td>
                   <td>2</td>
                   <td>256 rub</td>
-                  <td><button type="submit" class="btn btn-primary pull-right">Убрать</button></td>
+                  <td><button type="submit" class="btn btn-info pull-right">Убрать</button></td>
                 </tr>
                 <tr>
                   <td><img class="orderImg" src="assets/img/mac.jpg" alt="картинка"></td>
                   <td>macbook</td>
                   <td>2</td>
                   <td>256 rub</td>
-                  <td><button type="submit" class="btn btn-primary pull-right">Убрать</button></td>
+                  <td><button type="submit" class="btn btn-info pull-right">Убрать</button></td>
                 </tr>
                 <tr>
                   <td><img class="orderImg" src="assets/img/mac.jpg" alt="картинка"></td>
                   <td>macbook</td>
                   <td>2</td>
                   <td>256 rub</td>
-                  <td><button type="submit" class="btn btn-primary pull-right">Убрать</button></td>
+                  <td><button type="submit" class="btn btn-info pull-right">Убрать</button></td>
                 </tr>
               </tbody>
 
@@ -67,7 +67,7 @@
             </table>
 
             <div class="divOrderBtn">
-              <button type="submit" class="orderBtn btn btn-default pull-right">Сформировать заказ</button>
+              <button type="submit" class="orderBtn btn btn-primary pull-right">Сформировать заказ</button>
             </div>
 
           </div>

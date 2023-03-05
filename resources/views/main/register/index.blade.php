@@ -13,7 +13,7 @@
 
             <div class="col-lg-6 col-md-6 col-sm-6">
               
-              <section class="col-lg-12 col-md-12 col-sm-12">
+              <section class="col-lg-12 col-md-12 col-sm-12 card">
 
                 <form class="registerForm" method="POST" action=" {{ route('register.store') }} ">
 
@@ -33,7 +33,12 @@
                       <label class="required" for="password_confirmation">Повторите пароль</label>
                       <input name="password_confirmation" type="password" class="form-control" placeholder="Повторный пароль" />
 
-                      <button type="submit" class="btn btn-info btn-block">Добавить</button>
+                      <span class="pull-right">
+                        <input name="admin" class="form-check-input" type="checkbox" value="1" id="admin">
+                        <label class="form-check-label" for="admin">Админ</label>
+                      </span>
+
+                      <button type="submit" class="btn btn-primary btn-block">Добавить</button>
 
                   </div>
                 </form>

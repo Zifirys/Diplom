@@ -24,6 +24,11 @@ input[type=number]{
 	color: black;
 }
 
+input[type=checkbox]{
+	margin-top: 7px;
+	margin-bottom: 25px;
+}
+
 .container{
 	width: 880px;
 }
@@ -55,15 +60,15 @@ input[type=number]{
 	margin-top: 20px;
 }
 .btn-info:hover{
-	background-color: #222;
+	background-color: #e7abff;
 	border: solid 1px #787878;
 }
 
 
 .btn-default{
-	background-color: #c7b5ff;
+	background-color: #f5bfff;
+	color: #fff;
 	margin-top: 15px;
-	color: #25024a;
 }
 .btn-default:hover{
 	background-color: #000000a3;
@@ -337,7 +342,7 @@ input[type=number]{
 /*orders*/
 
 .table>thead>tr>th{
-	background-color: #0081b9;
+	background-color: #73229d;
 }
 .table>thead>tr>th:first-child{
 	border-top-left-radius: 2px;
@@ -348,12 +353,12 @@ input[type=number]{
 
 
 .table>tbody>tr{
-	background-color: #60a0c5;
+	background-color: #d386fb;
 }
 
 
 .table>tfoot>tr>th{
-	background-color: #004372;
+	background-color: #73229d;
 }
 .table>tfoot>tr>th:first-child{
 	border-bottom-left-radius: 7px;

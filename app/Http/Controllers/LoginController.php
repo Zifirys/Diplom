@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreLoginReguest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -13,12 +14,21 @@ class LoginController extends Controller
 
     public function store(StoreLoginReguest $request){
 
-        /*$request->validated();*/
+        $validated = $request->validated();
 
 
+        if (Auth::attempt($validated)) {
 
-        session(['alert-info' => "Вы успешно авторизировались"]);
+            $request->session()->regenerate();
 
-        return redirect()->route('home');
+            session(['alert-info' => "Вы успешно авторизировались"]);
+
+            return redirect()->route('home');
+
+        }else{
+            return redirect()->back()->withErrors(['alert-danger' => 'Неверный логин или пароль']);
+        }
     }
+
+
 }

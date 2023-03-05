@@ -19,6 +19,7 @@ class RegisterController extends Controller
        $user = User::query()->create([
             'login' => $validated['login'],
             'password' => bcrypt($validated['password']),
+            'admin' => $validated['admin'] ?? "0",
        ]);
 
         

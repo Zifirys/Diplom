@@ -10,7 +10,7 @@
 
           <div class="col-lg-3 col-md-3 col-sm-2"></div>
 
-          <div class="main col-lg-6 col-md-6 col-sm-8 text-center">
+          <div : class="main col-lg-6 col-md-6 col-sm-8 text-center">
 
             <h2>Что вы хотите сделать?</h2>
 
@@ -20,11 +20,16 @@
               </a>
             </section>
 
-            <section class="mainSection text-center">
-              <a href=" {{ route('home.admin') }} ">
-                <h3>Дополнительный функционал</h3>
-              </a>
-            </section>
+            @foreach($admin as $adm)
+              @if($adm->admin == '1')
+                <section class="mainSection text-center">
+                  <a href=" {{ route('home.admin') }} ">
+                    <h3>Дополнительный функционал</h3>
+                  </a>
+                </section>
+              @endif
+            @endforeach
+
 
             <section class="mainSection text-center">
               <a href=" {{ route('order') }} ">

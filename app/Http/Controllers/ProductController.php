@@ -11,24 +11,21 @@ class ProductController extends Controller
 {
     public function index(Request $request){
 
-        $products = Product::query()->get();
-
-
-
         $validated = $request->validate([
             'search' => ['nullable', 'string', 'max:50'],
         ]);
 
         $query = Product::query();
 
-        if ($search = $validated['search'] ?? null) {
+        if ($search = $validated['search'] ?? null){
             $query->where('category', 'like', "%{$search}%");
             $query->orWhere('shortName', 'like', "%{$search}%");
+            $query->orWhere('color', 'like', "%{$search}%");
         }
 
 
 
-        $products = Product::query()
+        $products = $query
             ->orderBy('category', 'asc')
             ->orderBy('shortName', 'asc')
             ->paginate(12);
