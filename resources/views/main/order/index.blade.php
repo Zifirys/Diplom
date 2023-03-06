@@ -15,7 +15,7 @@
 
 
 
-          @if($orders->isEmpty())
+          @if($products->isEmpty())
 
             <div class="h2 text-center">
 
@@ -37,19 +37,22 @@
                   </tr>
                 </thead>
 
+
+
               @foreach($products as $product)
 
                 <tbody>
                   <tr>
                     <td></td>
-                    <td>{{ $product->product_id }}</td>
-                    <td>{{ $product->product_id->color }}</td>
-                    <td>{{ $product->color }} rub</td>
-                    <td><a class="btn btn-info pull-right" href="{{ route('order.delete', $order->id) }}">Убрать</a></td>
+                    <td>{{ $product }}</td>
+                    <td>{{ $product }}</td>
+                    <td>{{ $product->product_id }} rub</td>
+                    <td><a class="btn btn-info pull-right" href="{{ route('order.delete', $product->id) }}">Убрать</a></td>
                   </tr>
                 </tbody>
 
               @endforeach
+
 
 
                 <tfoot>

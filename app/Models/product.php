@@ -22,7 +22,7 @@ class Product extends Model
 
     public function order()
     {
-        return $this->belongsTo(Order::class);
+        return $this->hasone(Order::class);
     }
 }
 
