@@ -21,6 +21,8 @@ Route::prefix('user')->middleware('auth')->group(function(){
 	Route::get('products', [ProductController::class, 'index'])->name('product');
 
 	Route::get('orders', [OrderController::class, 'index'])->name('order');
+	Route::get('order/add/{id}', [OrderController::class, 'addToOrder'])->name('addToOrder');
+	Route::get('order/table/{id}', [OrderController::class, 'deleteOrder'])->name('order.delete');
 
 	Route::get('logout', LogoutController::class)->name('logout');
 });

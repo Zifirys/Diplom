@@ -43,12 +43,15 @@
                     <p>Удалить только для админа</p>
                   </div>
 
-                  <span>
-                    <a class="btn btn-info pull-right" href="{{ route('product.delete', $product->id) }}">Удалить</a>
-                  </span>
+                  @foreach($admin as $adm)
+                    @if($adm->admin == '1')
+                      <span>
+                        <a class="btn btn-info pull-right" href="{{ route('product.delete', $product->id) }}">Удалить</a>
+                      </span>
+                    @endif
+                  @endforeach
 
-
-                  <button type="submit" class="btn btn-info">В заказ</button>
+                  <a href="{{ route('addToOrder', $product->id) }}" class="btn btn-info">В заказ</a>
                 </section>
 
               @endforeach

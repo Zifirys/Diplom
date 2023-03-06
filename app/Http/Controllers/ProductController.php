@@ -6,6 +6,8 @@ use App\Http\Requests\ProductRequest;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use Illuminate\Contracts\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class ProductController extends Controller
 {
@@ -23,15 +25,18 @@ class ProductController extends Controller
             $query->orWhere('color', 'like', "%{$search}%");
         }
 
-
-
         $products = $query
             ->orderBy('category', 'asc')
             ->orderBy('shortName', 'asc')
             ->paginate(12);
 
 
-        return view('main.product.index', compact('products'));
+        $user = Auth::user();
+
+        $admin = User::query()->find($user);
+
+
+        return view('main.product.index', compact('products', 'admin'));
     }
 
 
