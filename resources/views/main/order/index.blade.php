@@ -10,7 +10,7 @@
           <div class="orders">
 
             <h1 class="text-center">Товары для заказа</h1>
-            <h1 class="text-center">ТАБЛИЦА ПЛОХО АДАПТИВНА</h1>
+            <p class="text-center">ТАБЛИЦА ПЛОХО АДАПТИВНА</p>
 
 
 
@@ -44,9 +44,9 @@
                 <tbody>
                   <tr>
                     <td></td>
-                    <td>{{ $product }}</td>
-                    <td>{{ $product }}</td>
-                    <td>{{ $product->product_id }} rub</td>
+                    <td>{{ $product->product['shortName'] }}</td>
+                    <td>{{ $product->product['color'] }}</td>
+                    <td>{{ $product->product['price'] }} rub</td>
                     <td><a class="btn btn-info pull-right" href="{{ route('order.delete', $product->id) }}">Убрать</a></td>
                   </tr>
                 </tbody>

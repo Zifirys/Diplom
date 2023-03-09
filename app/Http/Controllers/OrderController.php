@@ -16,7 +16,7 @@ class OrderController extends Controller
 
         $products = Order::query()
             ->where('user_id', Auth::user()->id)
-            ->get(['id', 'product_id']);
+            ->get();
 
 
         return view('main.order.index', compact('products'));

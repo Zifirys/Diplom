@@ -17,7 +17,7 @@ class Order extends Model
         'shortName', 'price', 'color',
     ];
 
-    public function products()
+    public function product()
     {
         return $this->belongsTo(Product::class);
     }
