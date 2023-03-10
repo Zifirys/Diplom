@@ -5,7 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\OrderController;
+use App\Http\Controllers\BasketController;
 use App\Http\Controllers\LogoutController;
 
 
@@ -20,9 +20,9 @@ Route::prefix('user')->middleware('auth')->group(function(){
 
 	Route::get('products', [ProductController::class, 'index'])->name('product');
 
-	Route::get('orders', [OrderController::class, 'index'])->name('order');
-	Route::get('order/add/{id}', [OrderController::class, 'addToOrder'])->name('addToOrder');
-	Route::get('order/table/{id}', [OrderController::class, 'deleteOrder'])->name('order.delete');
+	Route::get('basket', [BasketController::class, 'index'])->name('basket');
+	Route::get('basket/add/{id}', [BasketController::class, 'addTobasket'])->name('addTobasket');
+	Route::get('basket/table/{id}', [BasketController::class, 'deletebasket'])->name('basket.delete');
 
 	Route::get('logout', LogoutController::class)->name('logout');
 });

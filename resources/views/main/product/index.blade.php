@@ -51,7 +51,7 @@
                     @endif
                   @endforeach
 
-                  <a href="{{ route('addToOrder', $product->id) }}" class="btn btn-info">В заказ</a>
+                  <a href="{{ route('addTobasket', $product->id) }}" class="btn btn-info">В заказ</a>
                 </section>
 
               @endforeach

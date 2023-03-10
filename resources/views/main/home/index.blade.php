@@ -32,7 +32,7 @@
 
 
             <section class="mainSection text-center">
-              <a href=" {{ route('order') }} ">
+              <a href=" {{ route('basket') }} ">
                 <h3>Сформировать заказ</h3>
               </a>
             </section>

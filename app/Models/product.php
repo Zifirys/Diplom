@@ -18,11 +18,8 @@ class Product extends Model
         'img', 'color',
 
         'search',
+        
     ];
 
-    public function order()
-    {
-        return $this->hasOne(Order::class);
-    }
 }
 

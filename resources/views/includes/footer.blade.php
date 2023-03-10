@@ -16,7 +16,7 @@
                     <a href=" {{ route('product') }} "> Выбрать товар</a>
                   </li>
                   <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                    <a href=" {{ route('order') }} "> Сформировать заказ</a>
+                    <a href=" {{ route('basket') }} "> Сформировать заказ</a>
                   </li>
                 </ul>
               </div>

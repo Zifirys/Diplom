@@ -13,15 +13,13 @@
             <p class="text-center">ТАБЛИЦА ПЛОХО АДАПТИВНА</p>
 
 
+            @if($products->isEmpty())
 
+              <div class="h2 text-center">
 
-          @if($products->isEmpty())
+                {{ "Добавьте товар" }}
 
-            <div class="h2 text-center">
-
-              {{ "Добавьте товар" }}
-
-            </div>
+              </div>
 
             @else
 
@@ -37,8 +35,6 @@
                   </tr>
                 </thead>
 
-
-
               @foreach($products as $product)
 
                 <tbody>
@@ -47,13 +43,11 @@
                     <td>{{ $product->product['shortName'] }}</td>
                     <td>{{ $product->product['color'] }}</td>
                     <td>{{ $product->product['price'] }} rub</td>
-                    <td><a class="btn btn-info pull-right" href="{{ route('order.delete', $product->id) }}">Убрать</a></td>
+                    <td><a class="btn btn-info pull-right" href="{{ route('basket.delete', $product->id) }}">Убрать</a></td>
                   </tr>
                 </tbody>
 
               @endforeach
-
-
 
                 <tfoot>
                   <tr>
@@ -67,13 +61,12 @@
 
               </table>
 
-
-
             <div class="divOrderBtn">
               <button type="submit" class="orderBtn btn btn-primary pull-right">Сформировать заказ</button>
             </div>
 
           @endif
+
 
           </div>
 
