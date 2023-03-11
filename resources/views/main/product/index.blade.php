@@ -26,7 +26,7 @@
 
             <div class="h2 text-center">
 
-              {{ "Нет товаров" }}
+              <h2>Нет товаров</h2>
 
             </div>
 
@@ -40,7 +40,6 @@
                     <h4>{{ $product->shortName }}</h4>
                     <p>{{ $product->color }}</p>
                     <h3>{{ $product->price }} руб.</h3>
-                    <p>Удалить только для админа</p>
                   </div>
 
                   @foreach($admin as $adm)
