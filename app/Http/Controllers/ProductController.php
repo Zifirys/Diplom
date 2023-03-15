@@ -63,7 +63,7 @@ class ProductController extends Controller
 
         session(['alert' => "Вы успешно добавили товар"]);
         
-        return redirect()->route('home');
+        return redirect()->route('product');
     }
 
 

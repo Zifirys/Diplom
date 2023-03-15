@@ -10,56 +10,62 @@
           <div class="orders">
 
             <h1 class="text-center">Товары для заказа</h1>
-            <p class="text-center">ТАБЛИЦА ПЛОХО АДАПТИВНА</p>
 
 
             @if($products->isEmpty())
 
               <div class="h2 text-center">
 
-                {{ "Добавьте товар" }}
+                <h2>Товар не был добавлен</h2>
 
               </div>
 
             @else
 
-              <table class="table table-dark table-sm">
+              <div class="table-responsive">
 
-                <thead>
-                  <tr>
-                    <th scope="col"></th>
-                    <th scope="col">Наименование</th>
-                    <th scope="col">Цвет</th>
-                    <th scope="col">Стоимость</th>
-                    <th scope="col"></th>
-                  </tr>
-                </thead>
+                <table class="table table-dark table-sm">
 
-              @foreach($products as $product)
+                  <thead>
+                    <tr>
+                      <th scope="col"></th>
+                      <th scope="col">Наименование</th>
+                      <th scope="col">Цвет</th>
+                      <th scope="col">Количество</th>
+                      <th scope="col">Стоимость</th>
+                      <th scope="col"></th>
+                    </tr>
+                  </thead>
 
-                <tbody>
-                  <tr>
-                    <td></td>
-                    <td>{{ $product->product['shortName'] }}</td>
-                    <td>{{ $product->product['color'] }}</td>
-                    <td>{{ $product->product['price'] }} rub</td>
-                    <td><a class="btn btn-info pull-right" href="{{ route('basket.delete', $product->id) }}">Убрать</a></td>
-                  </tr>
-                </tbody>
+                @foreach($products as $product)
 
-              @endforeach
+                  <tbody>
+                    <tr>
+                      <td></td>
+                      <td>{{ $product->product['shortName'] }}</td>
+                      <td>{{ $product->product['color'] }}</td>
+                      <td><input type="number" class="form-control" min="0"></td>
+                      <td>{{ $product->product['price'] }} rub</td>
+                      <td><a class="btn btn-info pull-right" href="{{ route('basket.delete', $product->id) }}">Убрать</a></td>
+                    </tr>
+                  </tbody>
 
-                <tfoot>
-                  <tr>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col">Общее кол-во предметов</th>
-                    <th scope="col">Общая тоимость</th>
-                    <th scope="col"></th>
-                  </tr>
-                </tfoot>
+                @endforeach
 
-              </table>
+                  <tfoot>
+                    <tr>
+                      <th scope="col"></th>
+                      <th scope="col"></th>
+                      <th scope="col"></th>
+                      <th scope="col">Общее кол-во товаров: {{ $count }}</th>
+                      <th scope="col">Общая стоимость: {{ $sum }}</th>
+                      <th scope="col"></th>
+                    </tr>
+                  </tfoot>
+
+                </table>
+
+              </div>
 
             <div class="divOrderBtn">
               <button type="submit" class="orderBtn btn btn-primary pull-right">Сформировать заказ</button>

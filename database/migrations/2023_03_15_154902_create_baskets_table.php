@@ -15,12 +15,15 @@ return new class extends Migration
     {
         Schema::create('basket_items', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
-            
-
-            $table->foreignId('user_id')->constrained();
+    
+            $table->string('session_id');
 
             $table->foreignId('product_id')->constrained();
+
+            $table->integer('quantity')->default(1);
+            $table->double('price')->default(0);
+
+            $table->timestamps();
         });
     }
 

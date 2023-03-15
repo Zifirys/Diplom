@@ -12,16 +12,16 @@ class BasketItem extends Model
     protected $table = 'basket_items';
 
     protected $fillable = [
-        'user_id', 'product_id',
+            
+        'product_id', 'session_id',
+
+        'quantity', 'price',
+        
     ];
 
 
     public function product() {
         return $this->belongsTo(Product::class);
-    }
-
-    public function user() {
-        return $this->hasOne(User::class);
     }
 
 }

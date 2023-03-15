@@ -26,7 +26,7 @@ class RegisterController extends Controller
 
         session(['alert' => 'Вы успешно добавили пользователя']);
 
-        return redirect()->route('home');
+        return redirect()->route('product');
 
     }
 }

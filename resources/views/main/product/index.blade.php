@@ -42,6 +42,7 @@
                     <h3>{{ $product->price }} руб.</h3>
                   </div>
 
+                @if(Auth::check())
                   @foreach($admin as $adm)
                     @if($adm->admin == '1')
                       <span>
@@ -49,6 +50,7 @@
                       </span>
                     @endif
                   @endforeach
+                @endif
 
                   <a href="{{ route('addTobasket', $product->id) }}" class="btn btn-info">В заказ</a>
                 </section>

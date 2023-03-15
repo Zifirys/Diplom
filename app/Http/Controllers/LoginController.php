@@ -23,7 +23,7 @@ class LoginController extends Controller
 
             session(['alert-info' => "Вы успешно авторизировались"]);
 
-            return redirect()->route('home');
+            return redirect()->route('product');
 
         }else{
             return redirect()->back()->withErrors(['alert-danger' => 'Неверный логин или пароль']);

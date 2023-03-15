@@ -15,26 +15,30 @@ class BasketController extends Controller
     public function index(Request $request){
 
         $products = BasketItem::query()
-            ->where('user_id', Auth::user()->id)
+            ->where('session_id', session()->getId())
             ->orderBy('product_id', 'asc')
             ->get();
 
+        $count = BasketItem::query()
+            ->where('session_id', session()->getId())
+            ->count();
 
-        return view('main.basket.index', compact('products'));
+
+        $sum = BasketItem::query()->sum('price');
+
+        return view('main.basket.index', compact('products', 'count', 'sum'));
     }
 
 
 
     public function addTobasket(Request $request, $id){
 
-        $user = Auth::user();
-
-        $user = User::query()->find($user);
-
+        $session = session()->getId();
 
         $order = BasketItem::query()->create([
-            'user_id' => auth()->id(),
+            'session_id' => $session,
             'product_id' => $id,
+            /*'price' =>*/
         ]);
 
         return redirect()->route('basket');
@@ -58,5 +62,6 @@ class BasketController extends Controller
         }
 
     }
+
 
 }

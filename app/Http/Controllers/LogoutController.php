@@ -13,7 +13,7 @@ class LogoutController extends Controller
     {
         Auth::logout();
 
-        return back();
+        return redirect()->route('product');
     }
 }
 

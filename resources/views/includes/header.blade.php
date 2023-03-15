@@ -21,9 +21,16 @@
             <div class="container">
 
               <ul class="nav nav-pills">
-                <li><a href=" {{ route('home') }} ">Главная</a></li>
+                <li><a href=" {{ route('product') }} ">Товары</a></li>
+
                 <li><a href=" {{ route('basket') }} ">Сформировать заказ</a></li>
-                <li><a href=" {{ route('logout') }} " class="pull-right">Выход</a></li>
+
+                @if (Auth::check())
+                  <li><a href=" {{ route('add') }} ">Добавить товар</a></li>
+                  <li><a href=" {{ route('logout') }} " class="pull-right">Выход</a></li>
+                @else
+                  <li><a href=" {{ route('login') }} " class="pull-right">Вход</a></li>
+                @endif
 
               </ul>
 
