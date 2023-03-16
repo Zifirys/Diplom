@@ -13,9 +13,13 @@ class Product extends Model
 
         'category',
         
-        'shortName', 'price',
+        'shortName', 
 
-        'img', 'color',
+        'price',
+
+        'img', 
+
+        'color',
 
         'search',
         

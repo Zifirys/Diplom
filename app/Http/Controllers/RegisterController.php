@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreRegisterRequest;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
@@ -14,17 +15,19 @@ class RegisterController extends Controller
 
     public function store(StoreRegisterRequest $request){
 
-       $validated = $request->validated();
+        $validated = $request->validated();
 
-       $user = User::query()->create([
+        $user = User::query()->create([
             'login' => $validated['login'],
             'password' => bcrypt($validated['password']),
-            'admin' => $validated['admin'] ?? "0",
-       ]);
+            'phone' => $validated['phone'],
+            'mail' => $validated['mail'],
+            'admin' => "0",
+        ]);
 
-        
+        Auth::login($user);
 
-        session(['alert' => 'Вы успешно добавили пользователя']);
+        session(['alert' => 'Вы успешно зарегистрировались']);
 
         return redirect()->route('product');
 

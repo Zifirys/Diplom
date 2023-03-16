@@ -24,19 +24,19 @@
 
                     <div class="form-group">
 
-                      <label class="required" for="add1" class="mr-2 col-form-label-sm">Категория</label>
+                      <label class="required" for="add1">Категория</label>
                        <input name="add1" type="text" class="form-control" placeholder="Ноутбук" autofocus/>
 
-                      <label class="required" for="add2" class="mr-2 col-form-label-sm">Полное наименование товара</label>
+                      <label class="required" for="add2">Полное наименование товара</label>
                       <input name="add2" type="text" class="form-control" placeholder="Apple MacBook Air"/>
 
                       <label class="required" for="add3">Выбирите картинку</label>
                       <input type="file" class="form-control-file" id="add3">
 
-                      <label class="required" for="add4" class="mr-2 col-form-label-sm">Цвет</label>
+                      <label class="required" for="add4">Цвет</label>
                       <input name="add4" type="text" class="form-control" placeholder="Синий"/>
 
-                      <label class="required" for="add5" class="mr-2 col-form-label-sm">Цена</label>
+                      <label class="required" for="add5">Цена</label>
                       <input name="add5" type="text" class="form-control" placeholder="15000"/>
 
                       <button type="submit" class="btn btn-primary btn-block mb-4">Добавить</button>

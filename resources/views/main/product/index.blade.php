@@ -9,6 +9,14 @@
 
           <div class="products">
 
+            @if(Auth::check())
+              @foreach($admin as $adm)
+                @if($adm->admin == '1')
+                  <a href="{{ route('add') }}" class="btn btn-primary">Добавить товар</a>
+                @endif
+              @endforeach
+            @endif
+
             <form class="searchForm" method="GET" action="{{ route('product') }}">
               <div class="form-group">
 
@@ -24,11 +32,11 @@
 
             @if($products->isEmpty())
 
-            <div class="h2 text-center">
+              <div class="h2 text-center">
 
-              <h2>Нет товаров</h2>
+                <h2>Нет товаров</h2>
 
-            </div>
+              </div>
 
             @else
 

@@ -17,7 +17,7 @@
 
                 <form class="registerForm" method="POST" action=" {{ route('register.store') }} ">
 
-                  <h2 class="text-center">Добавление нового пользователя</h2>
+                  <h2 class="text-center">Зарегистрация нового пользователя</h2>
 
                     @csrf
 
@@ -27,18 +27,26 @@
                       <label class="required" for="login">Имя пользователя</label>
                       <input name="login" value="{{ old('login') }}" type="text" class="form-control" placeholder="Логин" autofocus />
 
+                      <label class="required" for="phone">Номер телефона</label>
+                      <input name="phone" value="{{ old('phone') }}" type="tel" class="form-control" pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" placeholder="800-555-35-35" />
+
+                      <label class="required" for="mail">Номер телефона</label>
+                      <input name="mail" value="{{ old('mail') }}" type="email" class="form-control" placeholder="Olesa228@gmail.com" />
+
                       <label class="required" for="password">Пароль</label>
                       <input name="password" type="password" class="form-control" placeholder="Пароль" />
 
                       <label class="required" for="password_confirmation">Повторите пароль</label>
                       <input name="password_confirmation" type="password" class="form-control" placeholder="Повторный пароль" />
 
-                      <span class="pull-right">
-                        <input name="admin" class="form-check-input" type="checkbox" value="1" id="admin">
-                        <label class="form-check-label" for="admin">Админ</label>
-                      </span>
 
-                      <button type="submit" class="btn btn-primary btn-block">Добавить</button>
+                      <input name="admin" class="form-check-input" type="hidden" value="1" id="admin">
+                      <!-- <span class="pull-right">
+                        
+                        <label class="form-check-label" for="admin">Админ</label>
+                      </span> -->
+
+                      <button type="submit" class="btn btn-primary btn-block">Зарегистрироваться</button>
 
                   </div>
                 </form>

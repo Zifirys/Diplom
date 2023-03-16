@@ -2,30 +2,41 @@
 
 @section('content')
 
-  <section class="login col-lg-12 col-md-12 col-sm-12">
+  <div class="col-lg-12 col-md-12 col-sm-12">
 
-    <form class="loginForm" method="POST" action=" {{ route('login.store') }} ">
-      <div class="card">
+            <div class="col-lg-3 col-md-3 col-sm-2"></div>
 
-        @csrf
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              
+              <section class="col-lg-12 col-md-12 col-sm-12 card">
 
-        <h1 class="text-center">Вход</h1>
+                <form method="POST" action=" {{ route('login.store') }} ">
 
-        <x-errors />
+                    @csrf
 
-        <div class="form-group">
-          <label class="required" for="login">Имя пользователя</label>
-          <input name="login" type="text" value="{{ old('login') }}" class="form-control" placeholder="Логин" autofocus/>
+                    <h1 class="text-center">Вход</h1>
 
-          <label class="required" for="password">Пароль</label>
-          <input name="password" type="password" class="form-control" placeholder="Пароль" />
+                    <x-errors />
 
-          <button type="submit" class="btn btn-info btn-block mb-4">Войти</button>
-         </div>
+                    <div class="form-group">
+                      <label class="required" for="login">Имя пользователя</label>
+                      <input name="login" type="text" value="{{ old('login') }}" class="form-control" placeholder="Логин" autofocus/>
 
-      </div>
-    </form>
+                      <label class="required" for="password">Пароль</label>
+                      <input name="password" type="password" class="form-control" placeholder="Пароль" />
 
-  </section>
+                      <div class="link-register">
+                        <a href="{{ route('register') }}" class="pull-right">Зарегистрироваться</a>
+                      </div>
+
+                      <button type="submit" class="btn btn-info btn-block mb-4">Войти</button>
+                     </div>
+
+                </form>
+              </section>
+
+            </div>
+
+          </div>
 
 @endsection

@@ -9,8 +9,6 @@
 
           <div class="orders">
 
-            <h1 class="text-center">Товары для заказа</h1>
-
 
             @if($products->isEmpty())
 
@@ -21,6 +19,8 @@
               </div>
 
             @else
+
+            <h1 class="text-center">Товары для заказа</h1>
 
               <div class="table-responsive">
 
@@ -44,7 +44,7 @@
                       <td></td>
                       <td>{{ $product->product['shortName'] }}</td>
                       <td>{{ $product->product['color'] }}</td>
-                      <td><input type="number" class="form-control" min="0"></td>
+                      <td>{{ $product->quantity }}</td>
                       <td>{{ $product->product['price'] }} rub</td>
                       <td><a class="btn btn-info pull-right" href="{{ route('basket.delete', $product->id) }}">Убрать</a></td>
                     </tr>
@@ -68,7 +68,7 @@
               </div>
 
             <div class="divOrderBtn">
-              <button type="submit" class="orderBtn btn btn-primary pull-right">Сформировать заказ</button>
+              <a href="{{ route('orderForm') }}" class="orderBtn btn btn-primary pull-right">Сформировать заказ</a>
             </div>
 
           @endif

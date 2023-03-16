@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\BasketController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\OrderController;
 
 
 
@@ -22,11 +23,18 @@ Route::get('basket', [BasketController::class, 'index'])->name('basket');
 Route::get('basket/add/{id}', [BasketController::class, 'addToBasket'])->name('addTobasket');
 Route::get('basket/table/{id}', [BasketController::class, 'deleteBasket'])->name('basket.delete');
 
+Route::get('order/form', [OrderController::class, 'index'])->name('orderForm');
+Route::post('order/form/store', [OrderController::class, 'store'])->name('orderForm.store');
+
+
+
 
 Route::prefix('user')->middleware('auth')->group(function(){
 
 	Route::get('logout', LogoutController::class)->name('logout');
+
 });
+
 
 
 

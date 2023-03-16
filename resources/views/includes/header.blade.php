@@ -26,7 +26,6 @@
                 <li><a href=" {{ route('basket') }} ">Сформировать заказ</a></li>
 
                 @if (Auth::check())
-                  <li><a href=" {{ route('add') }} ">Добавить товар</a></li>
                   <li><a href=" {{ route('logout') }} " class="pull-right">Выход</a></li>
                 @else
                   <li><a href=" {{ route('login') }} " class="pull-right">Вход</a></li>

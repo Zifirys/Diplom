@@ -26,19 +26,19 @@
 
                     <div class="form-group">
 
-                      <label class="required" for="category" class="mr-2 col-form-label-sm">Категория</label>
+                      <label class="required" for="category">Категория</label>
                        <input name="category" type="text" value="{{ old('category') }}" class="form-control" placeholder="Телефон" autofocus/>
 
-                      <label class="required" for="fullName" class="mr-2 col-form-label-sm">Краткое наименование товара</label>
+                      <label class="required" for="fullName">Краткое наименование товара</label>
                       <input name="shortName" type="text" value="{{ old('shortName') }}" class="form-control" placeholder="Atraction 13 XL"/>
 
                       <label class="required" for="img">Выбирите картинку</label>
                       <input name='img' type="file" class="form-control-file" id="img">
 
-                      <label class="required" for="color" class="mr-2 col-form-label-sm">Цвет</label>
+                      <label class="required" for="color">Цвет</label>
                       <input name="color" type="text" value="{{ old('color') }}" class="form-control" placeholder="Синий"/>
 
-                      <label class="required" for="price" class="mr-2 col-form-label-sm">Цена</label>
+                      <label class="required" for="price">Цена</label>
                       <input name="price" type="text" value="{{ old('price') }}" class="form-control" placeholder="15000"/>
 
                       <button type="submit" class="btn btn-primary btn-block mb-4">Добавить</button>

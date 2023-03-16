@@ -13,6 +13,8 @@ class LogoutController extends Controller
     {
         Auth::logout();
 
+        session(['alert-info' => "Вы успешно вышли из аккаунта"]);
+
         return redirect()->route('product');
     }
 }

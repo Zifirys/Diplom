@@ -45,6 +45,8 @@ input[type=checkbox]{
 	border-radius: 14px;
 	padding: 30px;
 	color: #fff;
+	margin-top: 30px;
+	margin-bottom: 30px;
 }
 
 
@@ -60,7 +62,7 @@ input[type=checkbox]{
 	margin-top: 20px;
 }
 .btn-info:hover{
-	background-color: #e7abff;
+	background-color: /*#e7abff*/ #9553ff;
 	border: solid 1px #787878;
 }
 
@@ -126,26 +128,6 @@ input[type=checkbox]{
 
 
 
-/*search*/
-
-.searchForm{
-	margin-top: 20px;
-	margin-bottom: 80px;
-}
-
-.searchForm input[type=search]{
-		margin-top: 25px;
-		border-radius: 7px;
-}
-
-.searchForm button{
-	margin: 5px;
-	font-size: 16px;
-}
-
-
-
-
 
 
 
@@ -173,6 +155,18 @@ input[type=checkbox]{
 
 .form-control{
 	margin-bottom: 10px;
+}
+
+.link-register a{
+	color: #fff;
+   background-color: #8c00ff;
+   border-radius: 10px;
+   padding: 3px;
+   margin: 10px;
+}
+
+.link-register a:hover{
+	color: #ccc;
 }
 
 
@@ -216,42 +210,6 @@ input[type=checkbox]{
 
 
 
-/*index*/
-
-.main h2{
-	margin-bottom: 40px;
-}
-
-.mainSection{
-	margin-top: 20px;
-	padding: 5px;
-	margin-bottom: 10px;
-	border: solid 2px #fff;
-	border-radius: 10px;
-	background-color: #73229d;
-}
-
-.mainSection:hover{
-	background-color: #3b0d52;
-	border-color: #fff;
-}
-
-.mainSection h3{
-	font-size: 20px;
-	margin: 15px;
-}
-
-.mainSection a:hover{
-	color: #fff;
-}
-
-
-
-
-
-
-
-
 
 /*add*/
 
@@ -286,7 +244,6 @@ input[type=checkbox]{
 
 .registerForm label{
 	margin-top: 5px;
-
 }
 
 
@@ -295,7 +252,27 @@ input[type=checkbox]{
 
 
 
+/*search*/
+
+
+.searchForm{
+	margin-top: 20px;
+	margin-bottom: 80px;
+}
+
+.searchForm input[type=search]{
+		margin-top: 25px;
+		border-radius: 7px;
+}
+
+.searchForm button{
+	margin: 5px;
+	font-size: 16px;
+}
+
+
 /*products*/
+
 
 .product{
 	margin-bottom: 100px;

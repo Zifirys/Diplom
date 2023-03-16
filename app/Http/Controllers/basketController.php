@@ -24,6 +24,11 @@ class BasketController extends Controller
             ->count();
 
 
+            /*если товар уже есть, увеличиваем кол-во*/
+
+            /*если сессии 2часа-удаляем*/
+
+
         $sum = BasketItem::query()->sum('price');
 
         return view('main.basket.index', compact('products', 'count', 'sum'));
