@@ -38,9 +38,6 @@
                       <label class="required" for="adress">Улица дом, квартира</label>
                       <input name="adress" type="text" value="{{ old('adress') }}" class="form-control" placeholder="Пушкина 9к1, 79"/>
 
-                      <h3>full_price рублей</h3>
-                      <p>basket_id список товаров</p>
-
                       <button type="submit" class="btn btn-primary">оплатить</button>
 
                   </div>

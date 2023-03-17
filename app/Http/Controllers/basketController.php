@@ -23,13 +23,25 @@ class BasketController extends Controller
             ->where('session_id', session()->getId())
             ->count();
 
+        $sum = BasketItem::query()
+            ->where('session_id', session()->getId())
+            ->sum('price');
 
-            /*если товар уже есть, увеличиваем кол-во*/
-
-            /*если сессии 2часа-удаляем*/
 
 
-        $sum = BasketItem::query()->sum('price');
+        /*если товар уже есть, увеличиваем кол-во*/
+
+        /*$quantity = BasketItem::query()->get('quantity');
+        if ($quantity == $quantity) {
+            BasketItem::query()->increment('quantity', 1);
+        }*/
+
+
+
+
+        /*если сессии 2часа-удаляем*/
+
+        /*$deleteOld = BasketItem::where('created_at', '', Carbon::  )->delete();*/
 
         return view('main.basket.index', compact('products', 'count', 'sum'));
     }
@@ -40,10 +52,12 @@ class BasketController extends Controller
 
         $session = session()->getId();
 
+        $price = Product::query()->find($id);
+
         $order = BasketItem::query()->create([
             'session_id' => $session,
             'product_id' => $id,
-            /*'price' =>*/
+            'price' => $price['price']
         ]);
 
         return redirect()->route('basket');

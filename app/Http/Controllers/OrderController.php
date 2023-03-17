@@ -18,29 +18,33 @@ class OrderController extends Controller
         }
     }
 
+
+
     public function store(OrderStoreRequest $request){
 
         $validated = $request->validated();
 
-        /*чет не работает
-        
-        $user = Auth::user()->id;
-
-        $full_price = ...;
-
         $session = session()->getId();
 
-        $basket_id = BasketItem::query()->where($session)->get();*/
+        $full_price = BasketItem::query()->where('session_id', $session)->sum('price');
+
+        $user = Auth::user()->id;
+
+        $basket_id = BasketItem::query()->where('session_id', $session)->get('product_id');
+
 
         $newOrder = OrderForm::query()->create([
             'first_name' => $validated['first_name'],
             'last_name' => $validated['last_name'],
             'city' => $validated['city'],
             'adress' => $validated['adress'],
-            /*'full_price' => $full_price,
+            'full_price' => $full_price,
             'basket_id' => $basket_id,
-            'user_id' => $user,*/
+            'user_id' => $user,
         ]);
 
+        return "ok";
+        /*return redirect()->route();
+*/
     }
 }
