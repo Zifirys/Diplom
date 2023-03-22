@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Builder;
 
 class BasketService{
    
-     public function addToBasket(Request $request, $id){
+     public function addToBasket($id){
 
         $session = session()->getId();
 
@@ -24,23 +24,16 @@ class BasketService{
             'price' => $price['price']
         ]);
 
-
-        return redirect()->route('basket');
     }
+
+
+
 
      public function deleteFromBasket($id){
 
-        $request = BasketItem::query()->find($id);
+         $request = BasketItem::query()->find($id);
 
-        if($request->delete()){
-
-            session(['alert' => "Товар успешно удален"]);
-
-            return redirect()->route('basket');
-
-        }else{
-            abort(404);
-        }
+         $request->delete();
 
     }
 

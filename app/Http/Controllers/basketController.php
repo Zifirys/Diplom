@@ -34,9 +34,9 @@ class BasketController extends Controller
 
 
 
-    /*public function addToBasket(Request $request, $id){
+    public function addToBasket(Request $request, $id){
 
-        $session = session()->getId();
+        /*$session = session()->getId();
 
         $price = Product::query()->find($id);
 
@@ -44,20 +44,25 @@ class BasketController extends Controller
             'session_id' => $session,
             'product_id' => $id,
             'price' => $price['price']
-        ]);
+        ]);*/
+
+
+        $BasketItem = (new BasketService)->addToBasket($id);
 
 
         return redirect()->route('basket');
-    }*/
+    }
 
 
 
 
-    /*public function deleteFromBasket($id){
+    public function deleteFromBasket($id){
 
-        $request = BasketItem::query()->find($id);
+        /*$request = BasketItem::query()->find($id);*/
 
-        if($request->delete()){
+        $request = (new BasketService)->deleteFromBasket($id);
+
+        /*if($request->delete()){
 
             session(['alert' => "Товар успешно удален"]);
 
@@ -65,9 +70,13 @@ class BasketController extends Controller
 
         }else{
             abort(404);
-        }
+        }*/
 
-    }*/
+        session(['alert' => "Товар успешно удален"]);
+        
+        return redirect()->route('basket');
+
+    }
 
 
 }
