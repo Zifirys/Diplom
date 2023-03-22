@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductRequest;
-use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\User;
+use App\Services\CreateProductServices;
+use Illuminate\Http\Request;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Auth;
-use App\Models\User;
 
 class ProductController extends Controller
 {
@@ -15,6 +16,7 @@ class ProductController extends Controller
 
         $validated = $request->validate([
             'search' => ['nullable', 'string', 'max:50'],
+            'limit' => ['nullable', 'integer', 'min:1'],
         ]);
 
         $query = Product::query();
@@ -23,12 +25,16 @@ class ProductController extends Controller
             $query->where('category', 'like', "%{$search}%");
             $query->orWhere('shortName', 'like', "%{$search}%");
             $query->orWhere('color', 'like', "%{$search}%");
+            $query->orWhere('price', 'like', "{$search}");
         }
+
+
+        $limit = $validated['limit'] ?? 12;
 
         $products = $query
             ->orderBy('category', 'asc')
             ->orderBy('shortName', 'asc')
-            ->paginate(12);
+        ->paginate($limit);
 
 
         $user = Auth::user();
@@ -51,15 +57,7 @@ class ProductController extends Controller
 
         $validated = $request->validated();
 
-        $product = Product::query()->create([
-            'category' => $validated['category'],
-            'shortName' => $validated['shortName'],
-            'img' => $validated['img'],
-            'color' => $validated['color'],
-            'price' => $validated['price'],
-        ]);
-
-
+        $product = (new CreateProductServices)->run($validated);
 
         session(['alert' => "Вы успешно добавили товар"]);
         

@@ -19,16 +19,16 @@ class OrderForm extends Model
 
         'full_price',
 
-        'basket_id', 'user_id',
+        'basket_item_id', 'user_id',
         
     ];
 
     public function basket() {
-        return $this->hasOne(BasketItem::class);
+        return $this->belongsTo(BasketItem::class);
     }
 
     public function user() {
-        return $this->hasOne(BasketItem::class);
+        return $this->hasOne(User::class);
     }
 
 

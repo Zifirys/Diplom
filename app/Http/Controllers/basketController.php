@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\BasketItem;
 use App\Models\User;
+use App\Services\CreateBasketItemServices;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Builder;
 
@@ -28,21 +29,6 @@ class BasketController extends Controller
             ->sum('price');
 
 
-
-        /*если товар уже есть, увеличиваем кол-во*/
-
-        /*$quantity = BasketItem::query()->get('quantity');
-        if ($quantity == $quantity) {
-            BasketItem::query()->increment('quantity', 1);
-        }*/
-
-
-
-
-        /*если сессии 2часа-удаляем*/
-
-        /*$deleteOld = BasketItem::where('created_at', '', Carbon::  )->delete();*/
-
         return view('main.basket.index', compact('products', 'count', 'sum'));
     }
 
@@ -54,11 +40,7 @@ class BasketController extends Controller
 
         $price = Product::query()->find($id);
 
-        $order = BasketItem::query()->create([
-            'session_id' => $session,
-            'product_id' => $id,
-            'price' => $price['price']
-        ]);
+        $BasketItem = (new CreateBasketItemServices)->run($session, $id, $price);
 
         return redirect()->route('basket');
     }

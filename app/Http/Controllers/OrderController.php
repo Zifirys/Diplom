@@ -10,7 +10,7 @@ use App\Models\BasketItem;
 
 class OrderController extends Controller
 {
-    public function index(){
+    /*public function index(){
         if (Auth::check()) {
             return view('main.order.index');
         }else{
@@ -30,7 +30,11 @@ class OrderController extends Controller
 
         $user = Auth::user()->id;
 
-        $basket_id = BasketItem::query()->where('session_id', $session)->get('product_id');
+
+        $basket_item_id = BasketItem::query()
+            ->with('order')
+            ->where('session_id', $session)            
+            ->get('product_id');
 
 
         $newOrder = OrderForm::query()->create([
@@ -39,12 +43,11 @@ class OrderController extends Controller
             'city' => $validated['city'],
             'adress' => $validated['adress'],
             'full_price' => $full_price,
-            'basket_id' => $basket_id,
+            'basket_item_id' => $basket_item_id ?? "1001",
             'user_id' => $user,
         ]);
 
-        return "ok";
-        /*return redirect()->route();
-*/
-    }
+
+        return redirect()->route('product');
+    }*/
 }

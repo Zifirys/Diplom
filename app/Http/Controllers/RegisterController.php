@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreRegisterRequest;
-use Illuminate\Http\Request;
 use App\Models\User;
-use Illuminate\Support\Facades\Auth;
+use App\Services\CreateUserService;
+use App\Services\AuthUserService;
+use Illuminate\Http\Request;
+
 
 class RegisterController extends Controller
 {
@@ -17,15 +19,9 @@ class RegisterController extends Controller
 
         $validated = $request->validated();
 
-        $user = User::query()->create([
-            'login' => $validated['login'],
-            'password' => bcrypt($validated['password']),
-            'phone' => $validated['phone'],
-            'mail' => $validated['mail'],
-            'admin' => "0",
-        ]);
+        $user = (new CreateUserService)->run($validated);
 
-        Auth::login($user);
+        $auth = (new AuthUserService)->run($user);
 
         session(['alert' => 'Вы успешно зарегистрировались']);
 

@@ -24,7 +24,7 @@ return new class extends Migration
             $table->integer('full_price');
 
             $table->foreignId('user_id')->constrained();
-            $table->foreignId('basket_id')->constrained('basket_items');
+            $table->foreignId('basket_item_id')->constrained('basket_items')->default(1001);
 
             $table->timestamps();
         });

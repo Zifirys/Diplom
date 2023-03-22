@@ -28,7 +28,7 @@
                       <input name="login" value="{{ old('login') }}" type="text" class="form-control" placeholder="Логин" autofocus />
 
                       <label class="required" for="phone">Номер телефона</label>
-                      <input name="phone" value="{{ old('phone') }}" type="tel" class="form-control" pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" placeholder="800-555-35-35" />
+                      <input name="phone" value="{{ old('phone') }}" type="tel" class="form-control" pattern="+[7][0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" placeholder="800-555-35-35" />
 
                       <label class="required" for="mail">Номер телефона</label>
                       <input name="mail" value="{{ old('mail') }}" type="email" class="form-control" placeholder="Olesa228@gmail.com" />
