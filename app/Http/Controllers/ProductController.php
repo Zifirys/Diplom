@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ProductRequest;
 use App\Models\Product;
 use App\Models\User;
-use App\Services\CreateProductServices;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Auth;
@@ -57,7 +56,13 @@ class ProductController extends Controller
 
         $validated = $request->validated();
 
-        $product = (new CreateProductServices)->run($validated);
+        $product = Product::query()->create([
+            'category' => $validated['category'],
+            'shortName' => $validated['shortName'],
+            'img' => $validated['img'],
+            'color' => $validated['color'],
+            'price' => $validated['price'],
+        ]);
 
         session(['alert' => "Вы успешно добавили товар"]);
         

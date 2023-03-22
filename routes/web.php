@@ -10,6 +10,9 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\OrderController;
 
 
+use App\Services\BasketService;
+
+
 
 Route::get('/', [ProductController::class, 'index'])->name('product');
 
@@ -20,8 +23,27 @@ Route::get('register', [RegisterController::class, 'index'])->name('register');
 Route::post('register', [RegisterController::class, 'store'])->name('register.store');
 
 Route::get('basket', [BasketController::class, 'index'])->name('basket');
-Route::get('basket/add/{id}', [BasketController::class, 'addToBasket'])->name('addTobasket');
-Route::get('basket/table/{id}', [BasketController::class, 'deleteBasket'])->name('basket.delete');
+
+
+
+
+/*Route::get('basket/add/{id}', [BasketController::class, 'addToBasket'])->name('addTobasket');
+Route::get('basket/table/{id}', [BasketController::class, 'deleteFromBasket'])->name('basket.delete');*/
+
+
+
+Route::get('basket/add/{id}', [BasketService::class, 'addToBasket'])->name('addTobasket');
+Route::get('basket/table/{id}', [BasketService::class, 'deleteFromBasket'])->name('basket.delete');
+
+
+
+
+
+
+
+
+
+
 
 Route::get('order/form', [OrderController::class, 'index'])->name('orderForm');
 Route::post('order/form/store', [OrderController::class, 'store'])->name('orderForm.store');
