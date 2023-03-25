@@ -11,8 +11,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Builder;
 
 
-class BasketController extends Controller
-{
+class BasketController extends Controller{
+
     public function index(Request $request){
 
         $products = BasketItem::query()
@@ -36,41 +36,16 @@ class BasketController extends Controller
 
     public function addToBasket(Request $request, $id){
 
-        /*$session = session()->getId();
-
-        $price = Product::query()->find($id);
-
-        $BasketItem = BasketItem::query()->create([
-            'session_id' => $session,
-            'product_id' => $id,
-            'price' => $price['price']
-        ]);*/
-
-
-        $BasketItem = (new BasketService)->addToBasket($id);
-
+        (new BasketService)->addToBasket($id);
 
         return redirect()->route('basket');
     }
 
 
 
-
     public function deleteFromBasket($id){
 
-        /*$request = BasketItem::query()->find($id);*/
-
-        $request = (new BasketService)->deleteFromBasket($id);
-
-        /*if($request->delete()){
-
-            session(['alert' => "Товар успешно удален"]);
-
-            return redirect()->route('basket');
-
-        }else{
-            abort(404);
-        }*/
+        (new BasketService)->deleteFromBasket($id);
 
         session(['alert' => "Товар успешно удален"]);
         

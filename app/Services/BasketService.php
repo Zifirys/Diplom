@@ -5,10 +5,8 @@ namespace App\Services;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\BasketItem;
-use App\Models\User;
-use App\Services\BasketService;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Database\Eloquent\Builder;
+use App\Services\UserService;
+
 
 class BasketService{
    
@@ -16,16 +14,15 @@ class BasketService{
 
         $session = session()->getId();
 
-        $price = Product::query()->find($id);
+        $product = Product::query()->find($id);
 
-        $BasketItem = BasketItem::query()->create([
+        $basketItem = BasketItem::query()->create([
             'session_id' => $session,
             'product_id' => $id,
-            'price' => $price['price']
+            'price' => $product['price']
         ]);
 
     }
-
 
 
 
@@ -36,5 +33,6 @@ class BasketService{
          $request->delete();
 
     }
+
 
 }

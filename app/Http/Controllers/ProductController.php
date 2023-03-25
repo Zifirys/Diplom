@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ProductRequest;
 use App\Models\Product;
 use App\Models\User;
+use App\Services\ProductService;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Auth;
 
-class ProductController extends Controller
-{
+class ProductController extends Controller{
+
     public function index(Request $request){
 
         $validated = $request->validate([
@@ -18,7 +19,9 @@ class ProductController extends Controller
             'limit' => ['nullable', 'integer', 'min:1'],
         ]);
 
+
         $query = Product::query();
+
 
         if ($search = $validated['search'] ?? null){
             $query->where('category', 'like', "%{$search}%");
@@ -42,6 +45,7 @@ class ProductController extends Controller
 
 
         return view('main.product.index', compact('products', 'admin'));
+
     }
 
 
@@ -56,13 +60,7 @@ class ProductController extends Controller
 
         $validated = $request->validated();
 
-        $product = Product::query()->create([
-            'category' => $validated['category'],
-            'shortName' => $validated['shortName'],
-            'img' => $validated['img'],
-            'color' => $validated['color'],
-            'price' => $validated['price'],
-        ]);
+        (new ProductService)->createProduct($validated);
 
         session(['alert' => "Вы успешно добавили товар"]);
         
@@ -70,19 +68,24 @@ class ProductController extends Controller
     }
 
 
+
     public function delete($id){
 
-        $request = Product::query()->find($id);
+        $product = (new ProductService)->deleteProduct($id);
 
-        if($request->delete()){
+        if($product){
 
             session(['alert' => "Товар успешно удален"]);
 
             return redirect()->route('product');
 
         }else{
+
             abort(404);
+            
         }
 
     }
+
+
 }

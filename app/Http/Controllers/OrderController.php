@@ -8,8 +8,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\OrderForm;
 use App\Models\BasketItem;
 
-class OrderController extends Controller
-{
+class OrderController extends Controller{
+
     /*public function index(){
         if (Auth::check()) {
             return view('main.order.index');
@@ -50,4 +50,6 @@ class OrderController extends Controller
 
         return redirect()->route('product');
     }*/
+
+    
 }
