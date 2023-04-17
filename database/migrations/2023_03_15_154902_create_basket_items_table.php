@@ -22,6 +22,18 @@ return new class extends Migration
             $table->integer('quantity')->default(1);
             $table->double('price')->default(0);
 
+            $table->string('first_name');
+            $table->string('last_name');
+
+            $table->string('phone');
+            $table->string('mail');
+
+            $table->string('city');
+            $table->string('adress');
+            $table->text('comment');
+
+            $table->boolean('form')->default(false);
+
             $table->timestamps();
         });
     }

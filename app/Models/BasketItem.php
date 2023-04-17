@@ -17,6 +17,19 @@ class BasketItem extends Model
 
         'quantity', 'price',
         
+
+        'first_name', 'last_name',
+
+        'phone', 'mail',
+
+        'city', 'adress',
+
+        'comment',
+
+        'full_price',
+
+        'basket_item_id', 'user_id',
+        
     ];
 
 

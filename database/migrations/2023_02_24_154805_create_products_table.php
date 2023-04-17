@@ -19,7 +19,6 @@ return new class extends Migration
 
             $table->string('category');
             $table->string('shortName');
-            $table->binary('img');
             $table->string('color');
             $table->integer('price')->unsigned();
         });

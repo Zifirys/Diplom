@@ -32,9 +32,6 @@
                       <label class="required" for="fullName">Краткое наименование товара</label>
                       <input name="shortName" type="text" value="{{ old('shortName') }}" class="form-control" placeholder="Atraction 13 XL"/>
 
-                      <label class="required" for="img">Выбирите картинку</label>
-                      <input name='img' type="file" class="form-control-file" id="img">
-
                       <label class="required" for="color">Цвет</label>
                       <input name="color" type="text" value="{{ old('color') }}" class="form-control" placeholder="Синий"/>
 

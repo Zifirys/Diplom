@@ -51,7 +51,6 @@
               @foreach($products as $product )
 
                 <section class="product col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                  <div class="productImg"><img src="{{ $product->img }}" alt="картинка"></div>
                   <div class="ProductText">
                     <h4>{{ $product->shortName }}</h4>
                     <p>{{ $product->color }}</p>

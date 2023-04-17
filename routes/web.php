@@ -34,7 +34,6 @@ Route::prefix('user')->middleware('auth')->group(function(){
 	Route::get('basket/add/{id}', [BasketController::class, 'addToBasket'])->name('addTobasket');
 	Route::get('basket/table/{id}', [BasketController::class, 'deleteFromBasket'])->name('basket.delete');
 
-
 	Route::get('order/form', [OrderController::class, 'index'])->name('orderForm');
 	Route::post('order/form/store', [OrderController::class, 'store'])->name('orderForm.store');
 

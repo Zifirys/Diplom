@@ -20,7 +20,14 @@ class BasketService{
         $basketItem = BasketItem::query()->create([
             'user_id' => $user,
             'product_id' => $id,
-            'price' => $product['price']
+            'price' => $product['price'],
+            'first_name' => 'null',
+            'last_name' => 'null',
+            'phone' => 'null',
+            'mail' => 'null',
+            'city'  => 'null',
+            'adress' => 'null',
+            'comment' => 'null',
         ]);
 
     }
@@ -34,6 +41,5 @@ class BasketService{
          $request->delete();
 
     }
-
 
 }

@@ -17,8 +17,6 @@ class Product extends Model
 
         'price',
 
-        'img', 
-
         'color',
 
         'search',

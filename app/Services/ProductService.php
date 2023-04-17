@@ -13,7 +13,6 @@ class ProductService{
         $product = Product::query()->create([
             'category' => $validated['category'],
             'shortName' => $validated['shortName'],
-            'img' => $validated['img'],
             'color' => $validated['color'],
             'price' => $validated['price'],
         ]);
