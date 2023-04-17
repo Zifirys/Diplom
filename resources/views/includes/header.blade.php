@@ -23,7 +23,7 @@
               <ul class="nav nav-pills">
                 <li><a href=" {{ route('product') }} ">Товары</a></li>
 
-                <li><a href=" {{ route('basket') }} ">Сформировать заказ</a></li>
+                <li><a href=" {{ route('basket') }} ">Заказ</a></li>
 
                 @if (Auth::check())
                   <li><a href=" {{ route('logout') }} " class="pull-right">Выход</a></li>

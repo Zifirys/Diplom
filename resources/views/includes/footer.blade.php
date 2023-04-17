@@ -13,10 +13,13 @@
               <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 pull-right text-center">
                 <ul class="footer-list-group list-group">
                   <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                    <a href=" {{ route('product') }} "> Выбрать товар</a>
+                    <a href=" {{ route('product') }} ">Выбрать товар</a>
                   </li>
                   <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                    <a href=" {{ route('basket') }} "> Сформировать заказ</a>
+                    <a href=" {{ route('basket') }} ">Заказ</a>
+                  </li>
+                  <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                    <a href=" {{ route('info') }} ">Дополнительная информация</a>
                   </li>
                 </ul>
               </div>

@@ -1,12 +1,12 @@
 html, body, main{
 	height: 100%;
-	background-color: #11002e;
-	color: #fff;
+	background-color: #e3edf6;
+	color: #000;
 	font-family: Rubik,Arial,sans-serif;
 }
 
 a{
-	color: #fff;
+	color: #000;
 	text-decoration: none;
 }
 
@@ -14,6 +14,10 @@ a:hover{
 	color: #a5a5a5;
 	text-decoration: none;
 }
+
+hr{
+   border-top: 1px solid #fff;
+ }
 
 label{
 	font-size: 15px;
@@ -40,7 +44,8 @@ input[type=checkbox]{
 }
 
 .card{
-	background-color: #dfb8e9;
+	background: rgb(26,156,194);
+	background: linear-gradient(90deg, rgba(26,156,194,1) 0%, rgba(8,99,202,1) 100%);
 	border: solid 2px #fff8fe;
 	border-radius: 14px;
 	padding: 30px;
@@ -57,37 +62,26 @@ input[type=checkbox]{
 /*btn*/
 
 .btn-info{
-	background-color: #000;
+	background-color: #0da5ee;
+	color: #fff;
 	border: solid 1px #cbb6ed;
 	margin-top: 20px;
 }
 .btn-info:hover{
-	background-color: /*#e7abff*/ #9553ff;
-	border: solid 1px #787878;
+	background-color: #1877ab;
+	border: solid 1px #ccc;
 }
 
 
 .btn-default{
-	background-color: #f5bfff;
-	color: #fff;
+	background-color: #fff;
+	color: #000;
 	margin-top: 15px;
 }
 .btn-default:hover{
-	background-color: #000000a3;
-	color: #c7b5ff;
+	background-color: #fff;
+	color: #ccc;
 }
-
-.btn-primary{
-	background-color: #b86aff;
-	border: solid 1px #fff;
-}
-.btn-primary:hover{
-	background-color: #7c20cf;
-	border: solid 1px #fff;
-}
-
-
-
 
 
 
@@ -112,18 +106,12 @@ input[type=checkbox]{
 
 
 
-
-
 /*pagination*/
 
 .pagination{
 	margin-bottom: 40px;
 	float: right;
 }
-
-
-
-
 
 
 
@@ -158,11 +146,12 @@ input[type=checkbox]{
 }
 
 .link-register a{
-	color: #fff;
-   background-color: #8c00ff;
-   border-radius: 10px;
-   padding: 3px;
-   margin: 10px;
+	color: #000;
+   background-color: #fff;
+   border-radius: 13px;
+   padding: 7px;
+   font-size: 12px;
+   margin: 12px;
 }
 
 .link-register a:hover{
@@ -174,36 +163,34 @@ input[type=checkbox]{
 
 
 
-
-
 /*header*/
 
 .navbar-default{
-	background-color: #000000a3;
+	background-color: #fff;
 	padding-top: 20px;
 	padding-bottom: 20px;
 	border: none;
 }
 
 .nav-pills>li>a{
-	color: #fff;
-	background-color: #464072;
-	border: solid 1px #fff;
+	color: #000;
+	background-color: none;
+	border: none;
 	font-size: 16px;
 }
 
 .nav-pills>li>a:hover{
-	color: #DCDCDC;
-	background-color: #210838;
-	border: solid 1px #4e1840;
+	color: #ccc;
+	background-color: #fff;
+	border: none;
 }
 
 .nav-pills>li:last-child{
 	float: right;
+	border-radius: 13px;
+	color: #fff;
+	background-color: #0ba6f0;
 }
-
-
-
 
 
 
@@ -232,8 +219,6 @@ input[type=checkbox]{
 
 
 
-
-
 /*register*/
 
 .registerForm h2{
@@ -254,7 +239,6 @@ input[type=checkbox]{
 
 /*search*/
 
-
 .searchForm{
 	margin-top: 20px;
 	margin-bottom: 80px;
@@ -271,27 +255,25 @@ input[type=checkbox]{
 }
 
 
+
+
+
+
 /*products*/
 
+.bigImg{
+	background-image: url("../../assets/img/mainBig.jpg");
+	height: 41em;
+	width: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position: center;
+}
 
 .product{
-	margin-bottom: 100px;
+	margin-bottom: 20px;
 	padding: 25px;
-}
-
-.product:nth-child(even){
-	background-color: #48227e;
-	border-radius: 10px;
-}
-
-.product:nth-child(odd){
-	background-color: #9757d7;
-	border-radius: 10px;
-}
-
-.product:hover{
-	background-color: #000000a3;
-	border-radius: 10px;
 }
 
 .formProduct{
@@ -321,26 +303,27 @@ input[type=checkbox]{
 
 .table-responsive{
 	margin-top: 30px;
+	color: #fff;
 }
 
 .table>thead>tr>th{
-	background-color: #73229d;
+	background-color: #0863ca;
 }
 .table>thead>tr>th:first-child{
-	border-top-left-radius: 2px;
+	border-top-left-radius: 5px;
 }
 .table>thead>tr>th:last-child{
-	border-top-right-radius: 2px;
+	border-top-right-radius: 5px;
 }
 
 
 .table>tbody>tr{
-	background-color: #d386fb;
+	background-color: #458fcd;
 }
 
 
 .table>tfoot>tr>th{
-	background-color: #73229d;
+	background-color: #0863ca;
 }
 .table>tfoot>tr>th:first-child{
 	border-bottom-left-radius: 7px;
@@ -368,12 +351,66 @@ input[type=checkbox]{
 
 
 
-/*form-order*/
+/*order*/
 
 .btn-form-order{
 	margin-top: 10px;
 }
 
+.order-money{
+	margin-bottom: 20px;
+}
+
+
+
+
+
+
+/*client-list*/
+
+.client-card{
+	background-color: #000;
+	border: solid 2px #fff;
+	border-radius: 7px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.client{
+	margin-top: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+.client h3{
+	margin-top: 25px;
+	margin-bottom: 20px;
+}
+
+.client p{
+	margin-top: 15px;
+}
+
+
+
+
+
+
+/*indo*/
+
+.info{
+	margin-bottom: 120px;
+}
+
+.info h2{
+	margin-top: 20px;
+	margin-bottom: 35px;
+}
+
+.info p{
+	margin-bottom: 25px;
+}
 
 
 
@@ -394,7 +431,7 @@ input[type=checkbox]{
 
 .list-group-item{
 	border: none;
-	background-color: #ffffff14;
+	background-color: #ffffff45;
 }
 
 
@@ -417,14 +454,7 @@ input[type=checkbox]{
 
 	.navbar-default .navbar-pills>li>a{
 		text-align:center;
-		color: #fff;
-		background-color: #006bff3d;
-		border: solid 1px #c9e7ff;
-	}
 
-	.navbar-default .navbar-pills>li>a:hover{
-		background-color: #e0f3ff;
-		color: #00439f;
 	}
 
 	.nav-pills>li>a{
@@ -454,8 +484,12 @@ input[type=checkbox]{
 		color: #fff;
 	}
 
+	.bigImg{
+		height: 0;
+	}
+
 	.product{
-		margin-bottom: 130px;
+		margin-bottom: 30px;
 	}
 
 	.ProductText{

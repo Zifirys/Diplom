@@ -15,21 +15,30 @@ class BasketController extends Controller{
 
     public function index(Request $request){
 
-        $products = BasketItem::query()
-            ->where('session_id', session()->getId())
-            ->orderBy('product_id', 'asc')
-            ->get();
+        if (Auth::check()) {
 
-        $count = BasketItem::query()
-            ->where('session_id', session()->getId())
-            ->count();
+            $user = Auth::user()->id;
 
-        $sum = BasketItem::query()
-            ->where('session_id', session()->getId())
-            ->sum('price');
+            $products = BasketItem::query()
+                ->where('user_id', $user)
+                ->orderBy('product_id', 'asc')
+                ->get();
+
+            $count = BasketItem::query()
+                ->where('user_id', $user)
+                ->count();
+
+            $sum = BasketItem::query()
+                ->where('user_id', $user)
+                ->sum('price');
 
 
-        return view('main.basket.index', compact('products', 'count', 'sum'));
+            return view('main.basket.index', compact('products', 'count', 'sum'));
+
+        }else{
+
+            return redirect()->route('login');
+        }
     }
 
 
@@ -46,8 +55,6 @@ class BasketController extends Controller{
     public function deleteFromBasket($id){
 
         (new BasketService)->deleteFromBasket($id);
-
-        session(['alert' => "Товар успешно удален"]);
         
         return redirect()->route('basket');
 

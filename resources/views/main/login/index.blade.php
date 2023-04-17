@@ -29,7 +29,7 @@
                         <a href="{{ route('register') }}" class="pull-right">Зарегистрироваться</a>
                       </div>
 
-                      <button type="submit" class="btn btn-info btn-block mb-4">Войти</button>
+                      <button type="submit" class="btn btn-info btn-block">Войти</button>
                      </div>
 
                 </form>

@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Product;
 use App\Models\BasketItem;
 use App\Services\UserService;
@@ -12,12 +13,12 @@ class BasketService{
    
      public function addToBasket($id){
 
-        $session = session()->getId();
+        $user = Auth::user()->id;
 
         $product = Product::query()->find($id);
 
         $basketItem = BasketItem::query()->create([
-            'session_id' => $session,
+            'user_id' => $user,
             'product_id' => $id,
             'price' => $product['price']
         ]);

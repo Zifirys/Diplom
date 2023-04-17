@@ -19,12 +19,16 @@ return new class extends Migration
             $table->string('first_name');
             $table->string('last_name');
 
+            $table->string('phone');
+            $table->string('mail');
+
             $table->string('city');
             $table->string('adress');
+            $table->text('comment');
             $table->integer('full_price');
 
-            $table->foreignId('user_id')->constrained();
-            $table->foreignId('basket_item_id')->constrained('basket_items')->default(1001);
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('basket_item_id')->constrained('basket_items');
 
             $table->timestamps();
         });

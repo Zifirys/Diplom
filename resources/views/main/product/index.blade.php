@@ -4,15 +4,23 @@
 
   <main>
     <div class="wrapper">
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
 
-          <div class="products">
+          <div class="bigImg"></div>
+
+          <div class="products container">
+
+            <div class="big-main-img"></div>
 
             @if(Auth::check())
-              @foreach($admin as $adm)
-                @if($adm->admin == '1')
-                  <a href="{{ route('add') }}" class="btn btn-primary">Добавить товар</a>
+              @foreach($user as $admin)
+                @if($admin->admin == '1')
+
+                  <a href="{{ route('add') }}" class="btn btn-info">Добавить товар</a>
+
+                  <a href="{{ route('orderList') }}" class="btn btn-info pull-right">Список заказов</a>
+                  
                 @endif
               @endforeach
             @endif
@@ -51,16 +59,16 @@
                   </div>
 
                 @if(Auth::check())
-                  @foreach($admin as $adm)
-                    @if($adm->admin == '1')
+                  @foreach($user as $admin)
+                    @if($admin->admin == "1")
                       <span>
-                        <a class="btn btn-info pull-right" href="{{ route('product.delete', $product->id) }}">Удалить</a>
+                        <a class="btn btn-info pull-right" href="{{ route('product.delete', $product->id) }}"><i class="glyphicon glyphicon-trash"></i></a>
                       </span>
                     @endif
                   @endforeach
                 @endif
 
-                  <a href="{{ route('addTobasket', $product->id) }}" class="btn btn-info">В заказ</a>
+                  <a href="{{ route('addTobasket', $product->id) }}" class="btn btn-default">В заказ</a>
                 </section>
 
               @endforeach

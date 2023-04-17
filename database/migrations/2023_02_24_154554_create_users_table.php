@@ -18,8 +18,6 @@ return new class extends Migration
             $table->timestamps();
 
             $table->string('login')->unique();
-            $table->string('phone')->unique();
-            $table->string('mail')->unique();
             $table->string('password');
             $table->rememberToken();
         });

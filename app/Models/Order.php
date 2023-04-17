@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class OrderForm extends Model
+class Order extends Model
 {
     use HasFactory;
 
@@ -15,7 +15,11 @@ class OrderForm extends Model
 
         'first_name', 'last_name',
 
+        'phone', 'mail',
+
         'city', 'adress',
+
+        'comment',
 
         'full_price',
 
@@ -23,13 +27,13 @@ class OrderForm extends Model
         
     ];
 
-    public function basket() {
-        return $this->belongsTo(BasketItem::class);
-    }
 
     public function user() {
         return $this->hasOne(User::class);
     }
 
+    /*public function basketItem() {
+        return $this->HasMany(BasketItem::class);
+    }*/
 
 }

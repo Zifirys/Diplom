@@ -41,7 +41,7 @@
                       <label class="required" for="price">Цена</label>
                       <input name="price" type="text" value="{{ old('price') }}" class="form-control" placeholder="15000"/>
 
-                      <button type="submit" class="btn btn-primary btn-block mb-4">Добавить</button>
+                      <button type="submit" class="btn btn-info btn-block">Добавить</button>
 
                   </div>
                 </form>

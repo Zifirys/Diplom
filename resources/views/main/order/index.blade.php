@@ -32,13 +32,25 @@
                       <label class="required" for="last_name">Фамилия</label>
                       <input name="last_name" type="text" value="{{ old('last_name') }}" class="form-control" placeholder="Бертон"/>
 
+                      <label class="required" for="phone">Номер телефона</label>
+                      <input name="phone" value="{{ old('phone') }}" type="tel" class="form-control" placeholder="+7 800-555-35-35" />
+
+                      <label class="required" for="mail">mail</label>
+                      <input name="mail" value="{{ old('mail') }}" type="email" class="form-control" placeholder="Olesa228@gmail.com" />
+
                       <label class="required" for="city">Город</label>
                       <input name="city" type="text" value="{{ old('city') }}" class="form-control" placeholder="Омерика"/>
 
                       <label class="required" for="adress">Улица дом, квартира</label>
                       <input name="adress" type="text" value="{{ old('adress') }}" class="form-control" placeholder="Пушкина 9к1, 79"/>
 
-                      <button type="submit" class="btn btn-primary">оплатить</button>
+
+                    <label for="comment">Коментарий к заказу</label>
+                    <textarea name="comment" value="{{ old('adress') }}" class="form-control" id="comment" rows="3"></textarea>
+
+                      <h3 class="order-money">Сумма заказа: {{ $sum }} руб.</h3>
+
+                      <button type="submit" class="btn btn-info btn-block">оплатить</button>
 
                   </div>
                 </form>

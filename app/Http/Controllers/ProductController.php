@@ -39,12 +39,11 @@ class ProductController extends Controller{
         ->paginate($limit);
 
 
-        $user = Auth::user();
+        $auth = Auth::user();
 
-        $admin = User::query()->find($user);
+        $user = User::query()->find($auth);
 
-
-        return view('main.product.index', compact('products', 'admin'));
+        return view('main.product.index', compact('products', 'user'));
 
     }
 

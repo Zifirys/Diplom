@@ -25,7 +25,7 @@ class ProductRequest extends FormRequest
     {
         return [
             'category' => ['required', 'string'],
-            'shortName'=> ['required', 'string', 'max:19'],
+            'shortName'=> ['required', 'string', 'max:18'],
             'img' => ['required', /*'file', 'image', 'max:2048'*/],
             'color' => ['required', 'string', 'max:25'],
             'price' =>['required', 'numeric', 'min:0', 'max:99999999'],

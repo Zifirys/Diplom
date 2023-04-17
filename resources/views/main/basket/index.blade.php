@@ -46,7 +46,7 @@
                       <td>{{ $product->product['color'] }}</td>
                       <td>{{ $product->quantity }}</td>
                       <td>{{ $product->product['price'] }} rub</td>
-                      <td><a class="btn btn-info pull-right" href="{{ route('basket.delete', $product->id) }}">Убрать</a></td>
+                      <td><a class="btn btn-default pull-right" href="{{ route('basket.delete', $product->id) }}">Убрать</a></td>
                     </tr>
                   </tbody>
 
@@ -68,7 +68,7 @@
               </div>
 
             <div class="divOrderBtn">
-              <a href="{{ route('orderForm') }}" class="orderBtn btn btn-primary pull-right">Сформировать заказ</a>
+              <a href="{{ route('orderForm') }}" class="orderBtn btn btn-default pull-right">Сформировать заказ</a>
             </div>
 
           @endif

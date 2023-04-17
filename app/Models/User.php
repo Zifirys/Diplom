@@ -18,8 +18,6 @@ class User extends Authenticatable
 
         'admin',
 
-        'phone', 'mail',
-
     ];
 
     protected $casts = [

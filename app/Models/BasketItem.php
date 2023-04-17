@@ -13,7 +13,7 @@ class BasketItem extends Model
 
     protected $fillable = [
             
-        'product_id', 'session_id',
+        'product_id', 'user_id',
 
         'quantity', 'price',
         
@@ -24,11 +24,12 @@ class BasketItem extends Model
         return $this->belongsTo(Product::class);
     }
 
-
-
-
-    public function order() {
-        return $this->hasMany(OrderForm::class);
+    public function user() {
+        return $this->hasOne(User::class);
     }
+
+    /*public function order() {
+        return $this->belongsTo(Order::class);
+    }*/
 
 }

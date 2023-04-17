@@ -16,9 +16,8 @@ return new class extends Migration
         Schema::create('basket_items', function (Blueprint $table) {
             $table->id();
     
-            $table->string('session_id');
-
-            $table->foreignId('product_id')->constrained();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('product_id')->constrained()->cascadeOnDelete();
 
             $table->integer('quantity')->default(1);
             $table->double('price')->default(0);

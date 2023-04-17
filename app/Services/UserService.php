@@ -28,8 +28,6 @@ class UserService{
         $user = User::query()->create([
             'login' => $validated['login'],
             'password' => bcrypt($validated['password']),
-            'phone' => $validated['phone'],
-            'mail' => $validated['mail'],
             'admin' => "0",
         ]);
 

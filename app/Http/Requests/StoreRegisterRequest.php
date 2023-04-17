@@ -28,8 +28,6 @@ class StoreRegisterRequest extends FormRequest
             'password' => ['required', 'string', 'min:5', 'max:60', 'confirmed'],
             'password_confirmation' => ['required', 'string'],
             'admin' => ['nullable', 'boolean'],
-            'phone' => ['required', 'string', 'unique:users,phone'],
-            'mail' => ['required', 'string', 'unique:users,mail'],
             'remember_token' => ['nullable', 'string'],
         ];
     }

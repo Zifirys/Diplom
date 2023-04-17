@@ -28,6 +28,9 @@ class OrderStoreRequest extends FormRequest
             'last_name' => ['required', 'string', 'max:150'],
             'city' => ['required', 'string', 'max:150'],
             'adress' => ['required', 'string', 'max:150'],
+            'comment' => ['nullable', 'string'],
+            'phone' => ['required', 'string'],
+            'mail' => ['required', 'string'],
         ];
     }
 }
